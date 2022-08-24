@@ -41,3 +41,11 @@ brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-rel
 brew update
 ACCEPT_EULA=Y brew install msodbcsql17 mssql-tools
 ```
+
+## Pull and Run SQL Server Docker Image with Podman
+https://hub.docker.com/_/microsoft-mssql-server
+
+```shell
+podman pull mcr.microsoft.com/mssql/server
+podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=EnterYourPasswordHere" -p 1433:1433 -d mcr.microsoft.com/mssql/server
+```
